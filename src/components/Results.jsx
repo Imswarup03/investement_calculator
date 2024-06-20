@@ -2,7 +2,7 @@ import UserInput from "./UserInput.jsx"
 
 import {calculateInvestmentResults,formatter} from "../util/investment.js"
 
-export default function Results({userInput,}){
+export default function Results({userInput}){
     const input= {
         initialInvestment:userInput.initialInvestment,
         annualInvestment:userInput.annualInvestment,

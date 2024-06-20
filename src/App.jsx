@@ -9,24 +9,26 @@ function App() {
     annualInvestment:1000,
     expectedReturnInterest:6,
     duration:6
-
-})
-const inputIsValid = userInput.duration>=1 && userInput.initialInvestment>0 && annualInvestment>1 && userInput.expectedReturnInterest>0;
-function onHandleChange(inputIdentifier, newValue){
-    setUserInput(prevUserInput=>{
-        return{
-        ...prevUserInput,
-        [inputIdentifier]:+newValue
-    } })
-}
-  return (
-    <>
-    <Header/>
-    <UserInput userInput={userInput} onChange={onHandleChange}/>
-    {!inputIsValid && <p className='center'>Please enter Valid Input Data</p>}
-    {inputIsValid && <Results userInput={userInput}/>}
-    </>
-  )
-}
+  })
+  const inputIsValid = userInput.duration>=1 
+  && userInput.initialInvestment>0 
+  && userInput.annualInvestment>1 
+  && userInput.expectedReturnInterest>0;
+  function onHandleChange(inputIdentifier, newValue){
+      setUserInput(prevUserInput=>{
+          return{
+          ...prevUserInput,
+          [inputIdentifier]:+newValue
+      } })
+  }
+    return (
+      <>
+      <Header/>
+      <UserInput userInput={userInput} onChange={onHandleChange}/>
+      {!inputIsValid && <p className='center'>Please enter Valid Input Data</p>}
+      {inputIsValid && <Results userInput={userInput}/>}
+      </>
+    )
+  }
 
 export default App
